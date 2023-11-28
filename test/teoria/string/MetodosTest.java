@@ -48,4 +48,37 @@ class MetodosTest {
         assertEquals(null, Metodos.obtenerSubcadena(null, 10));
 
     }
+
+    @Test
+    void reemplazarCaracteres() {
+        assertEquals("cOcOdrilO", Metodos.reemplazarCaracteres(
+                "cocodrilo", 'o', 'O'));
+        assertEquals("cocodrilo",  Metodos.reemplazarCaracteres(
+                "cocodrilo",'z', 'w'));
+        //assertEquals(null,  Metodos.reemplazarCaracteres(
+       //         null,'z', 'w'));
+        assertNull(Metodos.reemplazarCaracteres( null,'z', 'w'));
+        assertEquals("cocoDrilo", Metodos.reemplazarCaracteres(
+                "cocodrilo", 'd', 'D'));
+        assertEquals("", Metodos.reemplazarCaracteres("", 'd', 'D'));
+    }
+
+    @Test
+    void reemplazarSubcadenas() {
+        assertNull(Metodos.reemplazarSubcadenas(null, "1", "2"));
+        assertEquals("XXXXdrilo", Metodos.reemplazarSubcadenas("cocodrilo",
+                "co", "XX"));
+        assertEquals("cocodrilo", Metodos.reemplazarSubcadenas("cocodrilo",
+                "zz", "XX"));
+        assertEquals("", Metodos.reemplazarSubcadenas("", "d", "D"));
+        assertEquals("cocodrilo", Metodos.reemplazarSubcadenas(
+                "cocodrilo", null, "Z"));
+        assertEquals("cocodrilo", Metodos.reemplazarSubcadenas(
+                "cocodrilo", "c", null));
+        assertEquals("cocodrilo", Metodos.reemplazarSubcadenas(
+                "cocodrilo", null, null));
+        assertNull(Metodos.reemplazarSubcadenas(null, null, null));
+
+
+    }
 }

@@ -60,9 +60,20 @@ public class Metodos {
     // "co", 3 devuelve "cococo"
 
     //replace uno con char y otro con CharSequence
+    public static String reemplazarCaracteres( String cadena, char aCambiar, char cambio){
+        if (cadena == null)
+            return null;
+        return cadena.replace(aCambiar, cambio);
+    }
 
     //replaceAll
-
+    public static String reemplazarSubcadenas(String cadena, String oldCadena, String newCadena){
+        if (cadena == null)
+            return null;
+        if (oldCadena == null || newCadena == null)
+            return cadena;
+        return cadena.replaceAll(oldCadena, newCadena);
+    }
     //replaceFirst
 
     //startsWidth (parecido al endsWith)
